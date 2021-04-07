@@ -1,0 +1,14 @@
+function getPositionStyle(number) {
+    return '-' + number + 'px';
+}
+
+module.exports = {
+    handleScrollVertical: function handleScrollVertical(event, ins) {
+        var pinnedLeftContainer = ins.selectComponent('.table-pinned-left-container');
+        pinnedLeftContainer.setStyle({top: getPositionStyle(event.detail.scrollTop)});
+    },
+    handleScrollHorizontal: function handleScrollHorizontal(event, ins) {
+        var headerContainer = ins.selectComponent('.table-header-container');
+        headerContainer.setStyle({left: getPositionStyle(event.detail.scrollLeft)});
+    },
+}
