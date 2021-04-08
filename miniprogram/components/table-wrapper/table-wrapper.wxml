@@ -1,2 +1,9 @@
-<app-table wx:if="{{renderState === 0}}" height="{{height}}" columns="{{columns}}" row-data="{{rowData}}"></app-table>
-<app-table wx:else height="{{height}}" columns="{{columns}}" row-data="{{rowData}}"></app-table>
+<block wx:if="{{rowData.length === 0}}">
+  <view class="empty-table" style="height: {{height}}rpx">
+    <text>空</text>
+  </view>
+</block>
+<block wx:else>
+  <app-table wx:if="{{renderState === 0}}" height="{{height}}" columns="{{columns}}" row-data="{{rowData}}"></app-table>
+  <app-table wx:else height="{{height}}" columns="{{columns}}" row-data="{{rowData}}"></app-table>
+</block>

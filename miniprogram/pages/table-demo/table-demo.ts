@@ -5,7 +5,7 @@ interface Table {
   data: CellData[][];
 }
 
-const table1: Table = {
+const getTable1: () => Table = () => ({
   title: 'Table 1',
   columns: ['A', 'B', 'C', 'D', 'E', 'F', 'G', '测试测试测试', 'I', 'J', 'K', 'L', 'M', 'N', '测试\n测试'],
   data: [
@@ -20,18 +20,18 @@ const table1: Table = {
     [81, 82, 83, 84, 85, 86, 87, 88, 89, 810, 811, 812, 813, 814, 815],
     [91, 92, 93, 94, 95, 96, 97, 98, 99, 910, 911, 912, 913, 914, 915],
   ],
-};
+});
 
-const table2: Table = {
+const getTable2: () => Table = () => ({
   title: 'Table 2',
   columns: ['A', 'B', 'C', 'D', 'E'],
   data: [
     [1, 2, 3, 4, 5],
     ['测试测试测试\n测试', 22, 23, 24, 25],
   ],
-};
+});
 
-const table3: Table = {
+const getTable3: () => Table = () => ({
   title: 'Table 3',
   columns: ['A', 'B', 'C'],
   data: [
@@ -66,13 +66,13 @@ const table3: Table = {
     ['A29'],
     ['A30'],
   ],
-};
+});
 
 Page({
   data: {
-    tableTitle: table1.title,
-    tableColumns: table1.columns,
-    tableData: table1.data,
+    tableTitle: 'No Table',
+    tableColumns: [] as Table['columns'],
+    tableData: [] as Table['data'],
   },
   showTable(table: Table): void {
     this.setData({
@@ -82,13 +82,13 @@ Page({
     });
   },
   showTable1(): void {
-    this.showTable(table1);
+    this.showTable(getTable1());
   },
   showTable2(): void {
-    this.showTable(table2);
+    this.showTable(getTable2());
   },
   showTable3(): void {
-    this.showTable(table3);
+    this.showTable(getTable3());
   },
   setTableData(): void {
     const data = this.data.tableData;
