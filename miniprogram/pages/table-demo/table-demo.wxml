@@ -1,11 +1,8 @@
 <view>
   <view class="table-section">
-    <text class="title">Table 1</text>
-    <app-table height="500" columns="{{tableColumns1}}" row-data="{{tableData1}}"></app-table>
+    <text class="title">{{tableTitle}}</text>
+    <app-table height="500" columns="{{tableColumns}}" row-data="{{tableData}}"></app-table>
   </view>
-
-  <view class="table-section">
-    <text class="title">Table 2</text>
-    <app-table height="300" columns="{{tableColumns2}}" row-data="{{tableData2}}"></app-table>
-  </view>
+  <button bindtap="showTable1">Show Table 1</button>
+  <button bindtap="showTable2">Show Table 2</button>
 </view>

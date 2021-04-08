@@ -8,3 +8,7 @@
 .table-section .title {
     font-size: 32rpx;
 }
+
+button {
+    margin-bottom: 30rpx;
+}

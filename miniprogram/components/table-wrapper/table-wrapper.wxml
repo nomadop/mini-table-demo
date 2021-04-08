@@ -1,0 +1,2 @@
+<app-table wx:if="{{renderState === 0}}" height="{{height}}" columns="{{columns}}" row-data="{{rowData}}"></app-table>
+<app-table wx:else height="{{height}}" columns="{{columns}}" row-data="{{rowData}}"></app-table>
