@@ -11,4 +11,6 @@ module.exports = {
         var headerContainer = ins.selectComponent('.table-header-container');
         headerContainer.setStyle({left: getPositionStyle(event.detail.scrollLeft)});
     },
+    preventMove: function preventMove() {
+    },
 }

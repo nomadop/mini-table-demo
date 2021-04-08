@@ -3,17 +3,17 @@
 <view wx:if="{{visibility === 'hidden'}}" class="table-overlay" style="height: {{height}}rpx">
   <text>正在准备中。。。</text>
 </view>
-<view class="table-container" style="height: {{height}}rpx; visibility: {{visibility}}">
-  <view class="table-header">
-    <view class="table-pinned-left-header">
+<view class="table-container" style="height: {{height}}rpx; visibility: {{visibility}}" catchtouchmove="{{scroll.preventMove}}">
+  <view class="table-view table-header">
+    <view class="table-view table-pinned-left-header">
       <view class="table-row">
         <view id="static-cell" class="table-cell" style="height: {{headerHeight}}">
           <text decode="true">&nbsp;</text>
         </view>
       </view>
     </view>
-    <view class="table-header-viewport">
-      <view class="table-header-container" style="width: {{bodyWidth}}">
+    <view class="table-view table-header-viewport">
+      <view class="table-view table-header-container" style="width: {{bodyWidth}}">
         <view class="table-row">
           <view wx:for="{{columns}}"
                 wx:key="colNumber"
@@ -21,7 +21,7 @@
                 wx:for-item="column"
                 class="table-cell"
                 style="width: {{columnWidths[colNumber]}}">
-            {{column}}
+            <text>{{column}}</text>
           </view>
           <view wx:for="{{extraColumns - 0}}"
                 wx:key="colNumber"
@@ -33,9 +33,9 @@
       </view>
     </view>
   </view>
-  <view class="table-body">
-    <view class="table-pinned-left-viewport" style="height: {{height - 40}}rpx">
-      <view class="table-pinned-left-container">
+  <view class="table-view table-body">
+    <view class="table-view table-pinned-left-viewport" style="height: {{bodyHeight}}">
+      <view class="table-view table-pinned-left-container">
         <view wx:for="{{rowData}}"
               wx:key="rolNumber"
               wx:for-index="rowNumber"
@@ -56,16 +56,18 @@
         </view>
       </view>
     </view>
-    <scroll-view class="table-body-viewport"
-                 style="height: {{height - 40}}rpx"
+    <scroll-view class="table-view table-body-viewport"
+                 style="height: {{bodyHeight}}"
                  bindscroll="{{scroll.handleScrollVertical}}"
                  scroll-y="{{canVerticalScroll}}"
-                 scroll-anchoring enhanced>
-      <scroll-view class="table-body-horizontal-viewport"
+                 enhanced="{{true}}"
+                 bounces="{{false}}">
+      <scroll-view class="table-view table-body-horizontal-viewport"
                    bindscroll="{{scroll.handleScrollHorizontal}}"
                    scroll-x="{{canHorizontalScroll}}"
-                   scroll-anchoring enhanced>
-        <view class="table-body-container" style="width: {{bodyWidth}}">
+                   enhanced="{{true}}"
+                   bounces="{{false}}">
+        <view class="table-view table-body-container" style="width: {{bodyWidth}}">
           <view wx:for="{{rowData}}" wx:key="index" wx:for-item="row" class="table-row">
             <view wx:for="{{row}}"
                   wx:key="colNumber"

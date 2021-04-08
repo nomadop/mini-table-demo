@@ -1,3 +1,7 @@
+.table-view {
+    box-sizing: border-box;
+}
+
 .table-overlay {
     position: absolute;
     width: 750rpx;
@@ -29,15 +33,12 @@
 
 .table-pinned-left-viewport {
     width: 80rpx;
-    height: 260rpx;
     overflow: hidden;
     border-bottom: 2rpx solid black;
-    box-sizing: border-box;
 }
 
 .table-pinned-left-container {
     position: relative;
-    box-sizing: border-box;
 }
 
 .table-pinned-left-header .table-cell, .table-pinned-left-container .table-cell {
@@ -51,13 +52,8 @@
 }
 
 .table-body-viewport {
-    width: 670rpx;
-    height: 260rpx;
+    width: calc(100% - 80rpx);
     border-bottom: 2rpx solid black;
-}
-
-.table-body-container {
-    box-sizing: border-box;
 }
 
 .table-row {
