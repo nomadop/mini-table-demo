@@ -26,6 +26,7 @@ Component({
   },
   data: {
     visibility: 'hidden',
+    columnLength: 0,
     columnWidths: [] as string[],
     rowHeights: [] as string[],
     headerHeight: 'auto',
@@ -40,8 +41,10 @@ Component({
   },
   lifetimes: {
     attached(): void {
+      const columnLength = Math.max(this.properties.columns.length, maxBy(this.properties.rowData, 'length').length);
       this.setData({
-        columnWidths: Array(this.properties.columns.length).fill('auto'),
+        columnLength,
+        columnWidths: Array(columnLength).fill('auto'),
         rowHeights: Array(this.properties.rowData.length).fill('auto'),
         bodyHeight: `${this.properties.height - 40}rpx`,
       });

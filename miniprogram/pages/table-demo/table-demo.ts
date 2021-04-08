@@ -1,4 +1,11 @@
-const table1 = {
+type CellData = number | string;
+interface Table {
+  title: string;
+  columns: CellData[];
+  data: CellData[][];
+}
+
+const table1: Table = {
   title: 'Table 1',
   columns: ['A', 'B', 'C', 'D', 'E', 'F', 'G', '测试测试测试', 'I', 'J', 'K', 'L', 'M', 'N', '测试\n测试'],
   data: [
@@ -15,12 +22,49 @@ const table1 = {
   ],
 };
 
-const table2 = {
+const table2: Table = {
   title: 'Table 2',
   columns: ['A', 'B', 'C', 'D', 'E'],
   data: [
     [1, 2, 3, 4, 5],
     ['测试测试测试\n测试', 22, 23, 24, 25],
+  ],
+};
+
+const table3: Table = {
+  title: 'Table 3',
+  columns: ['A', 'B', 'C'],
+  data: [
+    ['A1', 'B1', 'C1', 'D1', 'E1'],
+    ['A2', 'B2', 'C2'],
+    ['A3', 'B3', 'C3', 'D3', 'E3', 'F3', 'G3', 'H3', 'I3', 'J3', 'K3', 'L3', 'M3', 'N3', 'O3', 'P3', 'Q3', 'R3', 'S3', 'T3', 'U3', 'V3', 'W3', 'X3', 'Y3', 'Z3'],
+    ['A4'],
+    ['A5'],
+    ['A6'],
+    ['A7'],
+    ['A8'],
+    ['A9'],
+    ['A10'],
+    ['A11'],
+    ['A12'],
+    ['A13'],
+    ['A14'],
+    ['A15'],
+    ['A16'],
+    ['A17'],
+    ['A18'],
+    ['A19'],
+    ['A20'],
+    ['A21'],
+    ['A22'],
+    ['A23'],
+    ['A24'],
+    ['A25'],
+    ['A26'],
+    ['A27'],
+    ['A28'],
+    ['A29'],
+    ['A30'],
   ],
 };
 
@@ -30,18 +74,27 @@ Page({
     tableColumns: table1.columns,
     tableData: table1.data,
   },
-  showTable1(): void {
+  showTable(table: Table): void {
     this.setData({
-      tableTitle: table1.title,
-      tableColumns: table1.columns,
-      tableData: table1.data,
+      tableTitle: table.title,
+      tableColumns: table.columns,
+      tableData: table.data,
     });
   },
+  showTable1(): void {
+    this.showTable(table1);
+  },
   showTable2(): void {
+    this.showTable(table2);
+  },
+  showTable3(): void {
+    this.showTable(table3);
+  },
+  setTableData(): void {
+    const data = this.data.tableData;
+    data[0][0] = '修改';
     this.setData({
-      tableTitle: table2.title,
-      tableColumns: table2.columns,
-      tableData: table2.data,
+      tableData: data,
     });
-  }
+  },
 });

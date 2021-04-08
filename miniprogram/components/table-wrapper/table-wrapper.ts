@@ -22,7 +22,7 @@ Component({
     renderState: 0,
   },
   observers: {
-    "height, columns, rowData": function () {
+    'height, columns.**, rowData.**': function () {
       if (this.data._isAttached) {
         this.setData({
           renderState: this.data.renderState ^ 1,

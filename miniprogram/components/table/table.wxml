@@ -8,26 +8,25 @@
     <view class="table-view table-pinned-left-header">
       <view class="table-row">
         <view id="static-cell" class="table-cell" style="height: {{headerHeight}}">
-          <text decode="true">&nbsp;</text>
+          <text>　</text>
         </view>
       </view>
     </view>
     <view class="table-view table-header-viewport">
       <view class="table-view table-header-container" style="width: {{bodyWidth}}">
         <view class="table-row">
-          <view wx:for="{{columns}}"
+          <view wx:for="{{columnLength - 0}}"
                 wx:key="colNumber"
                 wx:for-index="colNumber"
-                wx:for-item="column"
                 class="table-cell"
                 style="width: {{columnWidths[colNumber]}}">
-            <text>{{column}}</text>
+            <text>{{columns[colNumber] || '　'}}</text>
           </view>
           <view wx:for="{{extraColumns - 0}}"
                 wx:key="colNumber"
                 class="table-cell"
                 style="width: {{baseWidth}}">
-            <text decode="true">&nbsp;</text>
+            <text>　</text>
           </view>
         </view>
       </view>
@@ -42,7 +41,7 @@
               class="table-row"
               style="height: {{rowHeights[rowNumber]}}">
           <view class="table-cell">
-            <text>{{rowNumber}}</text>
+            <text>{{rowNumber + 1}}</text>
           </view>
         </view>
         <view wx:for="{{extraRows - 0}}"
@@ -51,7 +50,7 @@
               class="table-row"
               style="height: {{baseHeight}}">
           <view class="table-cell">
-            <text>{{rowData.length + rowNumber}}</text>
+            <text>{{rowData.length + rowNumber + 1}}</text>
           </view>
         </view>
       </view>
@@ -69,34 +68,33 @@
                    bounces="{{false}}">
         <view class="table-view table-body-container" style="width: {{bodyWidth}}">
           <view wx:for="{{rowData}}" wx:key="index" wx:for-item="row" class="table-row">
-            <view wx:for="{{row}}"
+            <view wx:for="{{columnLength - 0}}"
                   wx:key="colNumber"
                   wx:for-index="colNumber"
-                  wx:for-item="cellData"
                   class="table-cell"
                   style="width: {{columnWidths[colNumber]}}">
-              <text>{{cellData}}</text>
+              <text>{{row[colNumber] || '　'}}</text>
             </view>
             <view wx:for="{{extraColumns - 0}}"
                   wx:key="colNumber"
                   class="table-cell"
                   style="width: {{baseWidth}}">
-              <text decode="true">&nbsp;</text>
+              <text>　</text>
             </view>
           </view>
           <view wx:for="{{extraRows - 0}}" wx:key="*this" class="table-row">
-            <view wx:for="{{columns.length - 0}}"
+            <view wx:for="{{columnLength - 0}}"
                   wx:key="colNumber"
                   wx:for-index="colNumber"
                   class="table-cell"
                   style="width: {{columnWidths[colNumber]}}">
-              <text decode="true">&nbsp;</text>
+              <text>　</text>
             </view>
             <view wx:for="{{extraColumns - 0}}"
                   wx:key="colNumber"
                   class="table-cell"
                   style="width: {{baseWidth}}">
-              <text decode="true">&nbsp;</text>
+              <text>　</text>
             </view>
           </view>
         </view>
