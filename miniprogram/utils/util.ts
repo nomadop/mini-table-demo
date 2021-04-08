@@ -1,4 +1,4 @@
-const sumBy = require('./lodash.sumby.js');
+const sumBy = require('./lodash/sumby.js');
 
 export const formatTime = (date: Date) => {
   const year = date.getFullYear();

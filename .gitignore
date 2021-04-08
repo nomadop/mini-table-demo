@@ -10,3 +10,4 @@ yarn-error.log
 
 # WXApp
 miniprogram/**/*.js
+!miniprogram/utils/lodash/*.js

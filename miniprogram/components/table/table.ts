@@ -1,8 +1,8 @@
 import ScrollViewContext = WechatMiniprogram.ScrollViewContext;
 import { sumSize } from '../../utils/util';
 
-const chunk = require('../../utils/lodash.chunk.js');
-const maxBy = require('../../utils/lodash.maxby.js');
+const chunk = require('../../utils/lodash/chunk.js');
+const maxBy = require('../../utils/lodash/maxby.js');
 
 type HeightResult = { height: string };
 type WidthResult = { width: string };
