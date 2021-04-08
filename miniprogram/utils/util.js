@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.sumSize = void 0;
+var sumBy = require('./lodash/sumby.js');
+var sumSize = function (sizes) { return sumBy(sizes, function (size) { return parseFloat(size); }); };
+exports.sumSize = sumSize;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXRpbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInV0aWwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsSUFBTSxLQUFLLEdBQUcsT0FBTyxDQUFDLG1CQUFtQixDQUFDLENBQUM7QUFFcEMsSUFBTSxPQUFPLEdBQUcsVUFBQyxLQUFlLElBQUssT0FBQSxLQUFLLENBQUMsS0FBSyxFQUFFLFVBQUMsSUFBWSxJQUFLLE9BQUEsVUFBVSxDQUFDLElBQUksQ0FBQyxFQUFoQixDQUFnQixDQUFDLEVBQWhELENBQWdELENBQUM7QUFBaEYsUUFBQSxPQUFPLFdBQXlFIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3Qgc3VtQnkgPSByZXF1aXJlKCcuL2xvZGFzaC9zdW1ieS5qcycpO1xuXG5leHBvcnQgY29uc3Qgc3VtU2l6ZSA9IChzaXplczogc3RyaW5nW10pID0+IHN1bUJ5KHNpemVzLCAoc2l6ZTogc3RyaW5nKSA9PiBwYXJzZUZsb2F0KHNpemUpKTtcbiJdfQ==

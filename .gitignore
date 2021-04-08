@@ -7,7 +7,3 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-
-# WXApp
-miniprogram/**/*.js
-!miniprogram/utils/lodash/*.js
