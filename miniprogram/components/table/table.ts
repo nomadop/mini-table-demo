@@ -25,6 +25,7 @@ Component({
     },
   },
   data: {
+    visibility: 'hidden',
     columnWidths: [] as string[],
     rowHeights: [] as string[],
     headerHeight: 'auto',
@@ -71,6 +72,7 @@ Component({
         const bodyWidth = sumSize(columnWidths) + extraColumns * parseFloat(baseWidth) + 'px';
         this.setViewportBounces(bodyViewport, bodyHorizontalViewport);
         this.setData({
+          visibility: 'visible',
           baseWidth,
           baseHeight,
           headerHeight: maxHeaderHeightRes.height,

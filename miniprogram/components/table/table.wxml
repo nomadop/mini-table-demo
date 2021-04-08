@@ -1,6 +1,9 @@
 <wxs src="./scroll.wxs" module="scroll" />
 
-<view class="table-container" style="height: {{height}}rpx">
+<view wx:if="{{visibility === 'hidden'}}" class="table-overlay" style="height: {{height}}rpx">
+  <text>正在准备中。。。</text>
+</view>
+<view class="table-container" style="height: {{height}}rpx; visibility: {{visibility}}">
   <view class="table-header">
     <view class="table-pinned-left-header">
       <view class="table-row">

@@ -1,3 +1,11 @@
+.table-overlay {
+    position: absolute;
+    width: 750rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .table-container {
     font-size: 32rpx;
     width: 750rpx;
