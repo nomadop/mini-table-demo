@@ -92,9 +92,11 @@ Page({
   },
   setTableData(): void {
     const data = this.data.tableData;
-    data[0][0] = '修改';
-    this.setData({
-      tableData: data,
-    });
+    if (data.length > 0) {
+      data[0][0] = '修改';
+      this.setData({
+        tableData: data,
+      });
+    }
   },
 });

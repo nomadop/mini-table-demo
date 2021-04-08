@@ -6,5 +6,5 @@
   <button bindtap="showTable1">Show Table 1</button>
   <button bindtap="showTable2">Show Table 2</button>
   <button bindtap="showTable3">Show Table 3</button>
-  <button bindtap="setTableData">Set Data</button>
+  <button bindtap="setTableData">Set Table Data</button>
 </view>
