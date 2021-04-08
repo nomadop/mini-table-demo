@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Table Demo",
+  "usingComponents": {
+    "app-table": "/components/table/table"
+  }
+}

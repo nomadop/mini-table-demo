@@ -1,0 +1,11 @@
+<view>
+  <view class="table-section">
+    <text class="title">Table 1</text>
+    <app-table height="500" columns="{{tableColumns1}}" row-data="{{tableData1}}"></app-table>
+  </view>
+
+  <view class="table-section">
+    <text class="title">Table 2</text>
+    <app-table height="300" columns="{{tableColumns2}}" row-data="{{tableData2}}"></app-table>
+  </view>
+</view>

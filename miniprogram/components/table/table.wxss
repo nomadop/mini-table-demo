@@ -4,15 +4,16 @@
 
 .table-overlay {
     position: absolute;
-    width: 750rpx;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2rpx solid black;
 }
 
 .table-container {
     font-size: 32rpx;
-    width: 750rpx;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
