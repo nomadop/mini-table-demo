@@ -34,13 +34,18 @@
 
 .table-pinned-left-header .table-cell, .table-pinned-left-container .table-cell {
     width: 80rpx;
+    border-left: 2rpx solid black;
+}
+
+.table-header-viewport, .table-body-viewport {
+    box-sizing: border-box;
+    border-right: 2rpx solid black;
 }
 
 .table-body-viewport {
     width: 670rpx;
     height: 260rpx;
     border-bottom: 2rpx solid black;
-    box-sizing: border-box;
 }
 
 .table-body-container {
